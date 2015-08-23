@@ -38,6 +38,9 @@ return array (
         'factories' => array(
             'market-post-controller' => 'Market\Factory\PostControllerFactory'
         ),
+        'aliases' => array(
+            'alt' => 'market-view-controller'
+        ),
     ),
     'view_manager' => array(
         'template_path_stack' => array(

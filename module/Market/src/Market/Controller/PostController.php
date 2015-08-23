@@ -16,8 +16,8 @@ class PostController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel(array(
-            "categories" => $this->categories
-        ));
+        $category = $this->params()->fromQuery("category");
+        return new ViewModel(array("categories" => $category));
     }
+
 }
