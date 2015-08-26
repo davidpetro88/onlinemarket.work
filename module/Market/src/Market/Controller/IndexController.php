@@ -6,7 +6,6 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
-
     public function indexAction()
     {
         $messages = array();
@@ -17,4 +16,8 @@ class IndexController extends AbstractActionController
         return new ViewModel(array("messages"=> $messages));
     }
 
+    public function fooAction()
+    {
+        return array();
+    }
 }
