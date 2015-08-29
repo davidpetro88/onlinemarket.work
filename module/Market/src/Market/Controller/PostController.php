@@ -6,7 +6,6 @@ use Zend\View\Model\ViewModel;
 
 class PostController extends AbstractActionController
 {
-
     public $categories;
 
     public function setCategories($categories)
@@ -16,8 +15,7 @@ class PostController extends AbstractActionController
 
     public function indexAction()
     {
-        $category = $this->params()->fromQuery("category");
-        return new ViewModel(array("categories" => $category));
+        return new ViewModel(array("categories" => $this->categories));
     }
 
 }

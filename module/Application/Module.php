@@ -19,6 +19,7 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
         $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'onDispatch'), 100);
     }
 
@@ -26,7 +27,6 @@ class Module
     {
         $sm = $e->getApplication()->getServiceManager();
         $categories = $sm->get("categories");
-
         $vm = $e->getViewModel();
         $vm->setVariable("categories", $categories);
     }
