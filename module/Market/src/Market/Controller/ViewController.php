@@ -8,7 +8,8 @@ class ViewController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel(array("category" => "category postings"));
+        $category = $this->params()->fromQuery("category");
+        return new ViewModel(array("category" => $category));
     }
 
     public function itemAction()
