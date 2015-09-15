@@ -41,5 +41,4 @@ class PostController extends AbstractActionController
 
         return $viewModel;
     }
-
 }

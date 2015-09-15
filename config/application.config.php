@@ -11,7 +11,8 @@ return array(
         'Application',
         'Market',
         'Search',
-        'ZendDeveloperTools'
+        'ZendDeveloperTools',
+        'TwbBundle',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

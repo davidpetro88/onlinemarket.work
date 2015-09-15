@@ -88,6 +88,21 @@ return array(
         'factories' => array(
             'market-post-form' => 'Market\Factory\PostFormFactory',
             'market-post-filter' => 'Market\Factory\PostFilterFactory'
+        ),
+        'services' => array(
+            'market-expire-days' => array(
+                1,2,3,4,5
+            ),
+            'market-captcha-options' => array(
+                'font' =>  __DIR__ . '/../../../data/fonts/arial.ttf',
+                'imgDir'    => __DIR__ . '/../../../public/captcha',
+                'imgUrl'    => '/captcha',
+                'fontSize' => 50,
+                'height' => 100,
+                'width' => 200,
+                'dotNoiseLevel' => 40,
+                'lineNoiseLevel' => 6
+            )
         )
     ),
     'view_manager' => array(

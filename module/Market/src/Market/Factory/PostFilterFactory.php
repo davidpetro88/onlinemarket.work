@@ -13,6 +13,7 @@ class PostFilterFactory implements FactoryInterface
     {
         $filter = new PostFilter();
         $filter->setCategories($sm->get("categories"));
+        $filter->setExpireDays($sm->get('market-expire-days'));
         $filter->buildFilter();
         return $filter;
     }
