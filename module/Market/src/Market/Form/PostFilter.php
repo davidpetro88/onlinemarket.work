@@ -45,8 +45,7 @@ class PostFilter extends InputFilter {
 		$price->setAllowEmpty(TRUE);
 		$price->getValidatorChain()
 			  ->addByName('GreaterThan', array('min' => 0.00));
-		$price->getFilterChain()
-			  ->attach(new Float());	// custom filter
+		$price->getFilterChain()->attach(new Float());	// custom filter
 
 		$expires = new Input('expires');
 		$expires->setAllowEmpty(TRUE);

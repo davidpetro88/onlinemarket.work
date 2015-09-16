@@ -49,7 +49,7 @@ class PostForm extends Form
 			    ->setAttribute('class', 'expiresButton')
 			    ->setValueOptions($this->getExpireDays());
 
-		$city = new Text('cityCode');
+		$city = new Text('city');
 		$city->setLabel('Nearest City')
 		     ->setAttribute('title', 'Select the city of the item')
 		     ->setAttribute('id', 'cityCode')

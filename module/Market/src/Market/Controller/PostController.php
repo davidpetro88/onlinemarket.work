@@ -27,6 +27,9 @@ class PostController extends AbstractActionController
 
         if($this->getRequest()->isPost()){
             $this->postForm->setData($data);
+
+            var_dump($this->postForm->isValid());
+
             if($this->postForm->isValid()){
                 $this->flashMessenger()->addMessage("Thanks for posting!");
                 $this->redirect()->toRoute("home");
