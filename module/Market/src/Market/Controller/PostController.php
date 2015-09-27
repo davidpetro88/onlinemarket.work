@@ -6,6 +6,8 @@ use Zend\View\Model\ViewModel;
 
 class PostController extends AbstractActionController
 {
+    use ListingsTableTrait;
+
     public $categories;
     public $postForm;
 
@@ -27,21 +29,17 @@ class PostController extends AbstractActionController
 
         if($this->getRequest()->isPost()){
             $this->postForm->setData($data);
-
-            var_dump($this->postForm->isValid());
-
             if($this->postForm->isValid()){
+                $this->listings->addPosting($this->postForm->getData());
                 $this->flashMessenger()->addMessage("Thanks for posting!");
                 $this->redirect()->toRoute("home");
             } else {
-
                 $invalidView = new ViewModel();
                 $invalidView->setTemplate("market/post/invalid.phtml");
                 $invalidView->addChild($viewModel, "main");
                 return $invalidView;
             }
         }
-
         return $viewModel;
     }
 }
