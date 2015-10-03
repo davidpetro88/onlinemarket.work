@@ -3,7 +3,6 @@ namespace Market\Form;
 
 trait ExpireDaysTrait
 {
-
 	protected $expireDays;
 
 	/**
@@ -19,5 +18,4 @@ trait ExpireDaysTrait
 	public function setExpireDays($expireDays) {
 		$this->expireDays = $expireDays;
 	}
-
 }

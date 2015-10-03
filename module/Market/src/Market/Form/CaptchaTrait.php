@@ -17,5 +17,4 @@ trait CaptchaTrait
 	public function setCaptchaOptions($captchaOptions) {
 		$this->captchaOptions = $captchaOptions;
 	}
-
 }

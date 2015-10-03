@@ -8,7 +8,6 @@ use Market\Form\PostFilter;
 
 class PostFilterFactory implements FactoryInterface
 {
-
     public function createService(ServiceLocatorInterface $sm)
     {
         $filter = new PostFilter();

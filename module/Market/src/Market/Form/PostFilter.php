@@ -6,9 +6,7 @@ use Zend\InputFilter\Input;
 use Zend\Validator\Regex;
 use Market\Form\Filter\Float;
 
-
 class PostFilter extends InputFilter {
-
 
     use CategoryTrait;
     use ExpireDaysTrait;
@@ -55,7 +53,7 @@ class PostFilter extends InputFilter {
 			    ->attachByName('StripTags')
 				->attachByName('StringTrim');
 
-		$city = new Input('city');
+		$city = new Input('cityCode');
 		$city->setAllowEmpty(TRUE);
 		$city->getFilterChain()
 			 ->attachByName('StripTags')

@@ -6,10 +6,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {
-    /*
-     * (non-PHPdoc)
-     * @see \Zend\ServiceManager\FactoryInterface::createService()
-     */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $allService = $serviceLocator->getServiceLocator();

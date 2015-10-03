@@ -3,8 +3,6 @@ namespace Market\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
-use Zend\Db\Sql\Expression;
-use Zend\Db\Sql\Where;
 
 class ListingsTable extends TableGateway
 {
@@ -40,7 +38,7 @@ class ListingsTable extends TableGateway
         $data['city'] = trim($city);
         $data['country'] = trim($country);
 
-        $data = new \DateTime();
+        $date = new \DateTime();
 
         if($data['expires']){
             if($data['expires'] == 30) {
@@ -51,7 +49,7 @@ class ListingsTable extends TableGateway
         }
 
         $data['date_expires'] = $date->format("Y-m-d H:i:s");
-        unset($data['cityCode'], $data['date_expires'], $data['captcha'], $data['submit']);
+        unset($data['cityCode'], $data['expires'], $data['captcha'], $data['submit']);
         $this->insert($data);
     }
 }

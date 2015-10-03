@@ -11,7 +11,6 @@ use Zend\Form\Element\Radio;
 use Zend\Captcha\Image as ImageCaptcha;
 use Zend\Form\Element\Captcha;
 
-
 class PostForm extends Form
 {
     use CaptchaTrait;
@@ -29,7 +28,6 @@ class PostForm extends Form
         $title = new Text("title");
         $title->setLabel("Title")
               ->setAttributes(array("size"=>25, "maxLenght"=>128));
-
 
         $photo = new Text('photo_filename');
         $photo->setLabel('Photo')
@@ -49,7 +47,7 @@ class PostForm extends Form
 			    ->setAttribute('class', 'expiresButton')
 			    ->setValueOptions($this->getExpireDays());
 
-		$city = new Text('city');
+		$city = new Text('cityCode');
 		$city->setLabel('Nearest City')
 		     ->setAttribute('title', 'Select the city of the item')
 		     ->setAttribute('id', 'cityCode')
@@ -79,7 +77,6 @@ class PostForm extends Form
 		      ->setAttribute('size', 40)
 		      ->setAttribute('maxlength', 255);
 
-
 		$delCode = new Text('delete_code');
 		$delCode->setLabel('Delete Code')
 		        ->setAttribute('title', 'Enter the delete code for this item')
@@ -94,7 +91,6 @@ class PostForm extends Form
 		        ->setLabel('Help us to prevent SPAM!')
 		        ->setAttribute('class', 'captchaStyle')
 		        ->setAttribute('title', 'Help to prevent SPAM');
-
 
          $submit = new Submit('submit');
          $submit->setAttribute('value', 'Post');
